@@ -12,7 +12,10 @@ export default {
   name: 'app',
   components: {
     HelloWorld
-  }
+  },
+  data: () => ({
+    auth: true
+  })
 }
 </script>
 
