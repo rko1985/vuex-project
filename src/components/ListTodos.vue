@@ -10,7 +10,7 @@
 export default {
     computed: {
         todos(){
-            return this.$store.state.todos //getting todos from vuex store
+            return this.$store.state.todos.todos //getting todos from vuex store
         }
     }
 }

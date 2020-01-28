@@ -24,7 +24,7 @@ export default {
   },
 
   mounted(){
-    this.$store.dispatch('getTodos')
+    this.$store.dispatch('todos/getTodos')
   }
 
 }
