@@ -11,7 +11,8 @@ export default {
     methods: {
         saveTodo() {
             //when you hit enter it makes a commit to the vuex store
-            this.$store.commit('addTodo', this.todo) //commiting a mutation to the vuex store
+            this.$store.dispatch('addTodo', this.todo) //dispatching a mutation to the vuex store
+            //mutations are commited, actions are dispatched
         }
     }
 }

@@ -22,7 +22,11 @@ export default {
     CreateTodo,
     ListTodos
   },
-  
+
+  mounted(){
+    this.$store.dispatch('getTodos')
+  }
+
 }
 </script>
 
