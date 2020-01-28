@@ -1,21 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input v-model="todo" @keyup.enter="saveTodo()" type="text" placeholder="Todo item">
+    <ul>
+      <li v-for="(todoItem, index) in todos" :key="index">{{todoItem}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  },
+
   data: () => ({
-    auth: true
-  })
+    todos: [],
+    todo: ''
+  }),
+
+  methods: {
+    saveTodo(){
+      this.todos = [
+        ...this.todos, //add all elements that were there before
+        this.todo //then add the new one
+      ]
+    }
+  }
 }
 </script>
 
@@ -27,5 +36,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+input {
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 26px;
 }
 </style>
