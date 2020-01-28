@@ -4,6 +4,10 @@
 
 <script>
 export default {
-    props: ['count']
+    computed: {
+        count() {
+            return this.$store.getters.todosCount
+        }
+    }
 }
 </script>
